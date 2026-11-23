@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Layani file atau direktori fisik secara langsung (seperti assets/css/style.css)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Arahkan permintaan lainnya ke router index.php
+RewriteRule ^(.+)$ index.php?page=$1 [QSA,L]
